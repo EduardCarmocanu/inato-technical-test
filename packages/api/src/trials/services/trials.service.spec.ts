@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TrialsService } from './trials.service';
 import { TrialsRepository } from '../repositories/trials.repository';
 import { CountryEnum } from '../enums/country.enum';
-import { OngoingTrailDTOMapper } from '../mappers/ongoing-trial-dto.mapper';
+import { TrailDTOMapper } from '../mappers/trial-dto.mapper';
 import { TrialMapper } from '../mappers/trial.mapper';
 import { TrialModel } from '../models/trial.model';
 
@@ -54,7 +54,7 @@ describe('TrialsService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         TrialsService,
-        OngoingTrailDTOMapper,
+        TrailDTOMapper,
         TrialMapper,
         {
           provide: TrialsRepository,
