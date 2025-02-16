@@ -10,7 +10,7 @@ export const trialsController = () => {
 
     const getTrialsCountryOptions = (): Option => {
             const options = getCountryCodeOptions();
-    
+
             return new Option(
                 `-c, --country <${options}>`,
                 'Specifies the country filtering option')
