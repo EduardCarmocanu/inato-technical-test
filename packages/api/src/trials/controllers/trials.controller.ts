@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { OngoingTrialQueryDto } from 'src/trials/dtos/ongoing-trials-query.dto';
-import { TrialDTO } from 'src/trials/dtos/ongoing-trials.dto';
-import { TrialsService } from 'src/trials/services/trials.service';
+import { TrialsService } from '../services/trials.service';
+import { OngoingTrialQueryDto } from '../dtos/ongoing-trials-query.dto';
+import { TrialDTO } from '../dtos/ongoing-trials.dto';
 
 @Controller('trials')
 export class TrialsController {
