@@ -14,7 +14,7 @@ export class OngoingTrailDTOMapper implements IMapper<TrialModel, OngoingTrialDT
     }
 
     private getFormattedDate(date: Date): string {
-        return `${this.zeroPad(date.getUTCFullYear())}-${this.zeroPad(date.getUTCMonth() + 1)}-${this.zeroPad(date.getUTCDate())}`
+        return `${date.getUTCFullYear()}-${this.zeroPad(date.getUTCMonth() + 1)}-${this.zeroPad(date.getUTCDate())}`
     }
 
     map = (mappingObject: TrialModel): OngoingTrialDTO => {

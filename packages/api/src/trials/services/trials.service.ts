@@ -15,7 +15,7 @@ export class TrialsService {
         try {
             trials = await this.trialsRepository.getTrials();
         } catch (e) {
-            throw new InternalServerErrorException("Could not query data file");
+            throw new InternalServerErrorException("Could not query data source");
         }
 
         trials = trials.filter((trial) => {
