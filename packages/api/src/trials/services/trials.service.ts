@@ -1,9 +1,9 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { OngoingTrialDTO } from 'src/trials/dtos/ongoing-trials.dto';
-import { CountryEnum } from 'src/trials/enums/country.enum';
-import { OngoingTrailDTOMapper } from 'src/trials/mappers/ongoing-trial-dto.mapper';
-import { TrialModel } from 'src/trials/models/trial.model';
-import { TrialsRepository } from 'src/trials/repositories/trials.repository';
+import { TrialsRepository } from '../repositories/trials.repository';
+import { CountryEnum } from '../enums/country.enum';
+import { TrialModel } from '../models/trial.model';
+import { OngoingTrialDTO } from '../dtos/ongoing-trials.dto';
+import { OngoingTrailDTOMapper } from '../mappers/ongoing-trial-dto.mapper';
 
 @Injectable()
 export class TrialsService {
