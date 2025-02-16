@@ -4,7 +4,7 @@ import * as request from 'supertest';
 import { AppModule } from '../../src/app.module';
 import { CountryEnum } from '../../src/trials/enums/country.enum';
 
-describe('TrialsController (e2e)', () => {
+describe('TrialsController (integration)', () => {
     jest.mock('../../trials.json', () => ([
         {
             "name": "Olaparib + Sapacitabine in BRCA Mutant Breast Cancer",

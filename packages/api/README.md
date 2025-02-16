@@ -51,8 +51,8 @@ $ pnpm run start:prod
 # unit tests
 $ pnpm run test
 
-# e2e tests
-$ pnpm run test:e2e
+# integration tests
+$ pnpm run test:integration
 
 # test coverage
 $ pnpm run test:cov
