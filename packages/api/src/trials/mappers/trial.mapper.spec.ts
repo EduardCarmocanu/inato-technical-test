@@ -24,7 +24,7 @@ describe('TrialMapper', () => {
     });
 
     describe('map', () => {
-        it('should map a IRawTrail object to a Trail Model', () => {
+        it('should map a IRawTrial object to a TrialModel', () => {
             const result = mapper.map(testRawTrial);
 
             expect(result).toEqual(

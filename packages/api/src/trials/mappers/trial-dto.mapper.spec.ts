@@ -1,9 +1,9 @@
 import { CountryEnum } from '../enums/country.enum';
 import { TrialModel } from '../models/trial.model';
-import { TrailDTOMapper } from './trial-dto.mapper';
+import { TrialDTOMapper } from './trial-dto.mapper';
 
-describe('TrailDTOMapper', () => {
-    let mapper: TrailDTOMapper;
+describe('TrialDTOMapper', () => {
+    let mapper: TrialDTOMapper;
     const testRawTrial: TrialModel =  {
         "name": "Olaparib + Sapacitabine in BRCA Mutant Breast Cancer",
         "country": CountryEnum.FR,
@@ -14,7 +14,7 @@ describe('TrailDTOMapper', () => {
     }
 
     beforeEach(() => {
-        mapper = new TrailDTOMapper();
+        mapper = new TrialDTOMapper();
     })
 
     it('should be defined', () => {
@@ -22,7 +22,7 @@ describe('TrailDTOMapper', () => {
     });
 
     describe('map', () => {
-        it('should map a TrailModel object to a OngoingTrailDTO', () => {
+        it('should map a TrialModel object to a OngoingTrialDTO', () => {
             const result = mapper.map(testRawTrial);
 
             expect(result).toEqual(

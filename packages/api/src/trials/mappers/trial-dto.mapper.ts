@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { IMapper } from "../interfaces/mapper.interface";
 import { TrialModel } from "../models/trial.model";
-import { TrailDTO } from "../dtos/ongoing-trials.dto";
+import { TrialDTO } from "../dtos/ongoing-trials.dto";
 
 @Injectable()
-export class TrailDTOMapper implements IMapper<TrialModel, TrailDTO> {
+export class TrialDTOMapper implements IMapper<TrialModel, TrialDTO> {
     private zeroPad = (value: number): string => {
         if (value < 10) {
             return '0' + value
@@ -17,8 +17,8 @@ export class TrailDTOMapper implements IMapper<TrialModel, TrailDTO> {
         return `${date.getUTCFullYear()}-${this.zeroPad(date.getUTCMonth() + 1)}-${this.zeroPad(date.getUTCDate())}`
     }
 
-    map = (mappingObject: TrialModel): TrailDTO => {
-        const ongoingTrialDto = new TrailDTO();
+    map = (mappingObject: TrialModel): TrialDTO => {
+        const ongoingTrialDto = new TrialDTO();
 
         ongoingTrialDto.name = mappingObject.name;
         ongoingTrialDto.end_date = this.getFormattedDate(mappingObject.end_date)
