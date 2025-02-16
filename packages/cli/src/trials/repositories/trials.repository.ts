@@ -3,7 +3,7 @@ import { TrialModel } from "../models/trial.model";
 const trialsApiBaseUrl = 'http://localhost:3000';
 
 export const trialsRepository = () => {
-    const getOngoingTrials = async (country?: string): Promise<TrialModel[]> => {
+    const getOngoingTrials = async (country: string): Promise<TrialModel[]> => {
         const url = new URL(`${trialsApiBaseUrl}/trials/ongoing`);
 
         if (country) {
