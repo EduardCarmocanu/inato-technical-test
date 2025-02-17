@@ -1,5 +1,76 @@
-# Context
+# Intro
 
+You will find in this README.md file a high level description of the solution and the trade-offs made to stay within reasonable time of the 5h exercise duration.
+
+For more details on using the API and the CLI consult the README.md files found in their respective package folders
+
+# Overall architecure
+
+You fill find that the 2 main packages (api and cli) are both following the same application architecture overall where only the implementation details differ.
+
+Let's start with this representative diagram and you will find additional details bellow
+
+![alt text](image.png)
+
+### Models
+> Define the core concepts and relations existing in our applications
+
+### Controllers
+> Are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI is can be processing command (and arguments) inputs
+
+### Services
+> Define business logic related to a domain.
+
+### Repositories
+> Provide an abstraction layer for accessing data sources such as a database, api, or in our case, json files
+
+### Modules
+> Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
+
+Moreover, you may have noticed the usage of other structures such as:
+- Enums: for defining typed constants
+- Interfaces: for typing objects coming from external sources
+- Mappers: for mapping objects to defined types in our application
+
+These structures represent more technical implementation details an have been used to better structure the resulting solution where needed.
+
+# Technology choices
+
+### For the API
+For the API the [Nest.JS](https://nestjs.com/) framework was chosen because it provides a boost in productivity due to it's set of relevant features for this technical test such as:
+- Typescript
+- Dependency injection
+- Testing utilities
+- Opinionated structure
+- Endpoint definition and validation
+- CLI with code autogeneration capabilities
+
+### For the CLI
+The default setup that used [commander](https://www.npmjs.com/package/commander) was kept because it already provided an intuitive way to define and validate the CLI options to be provided. On top of that [jest](https://jestjs.io/fr/) was added to bring support for unit and integration testing.
+
+# Time constraints
+
+In order to remain withint the 5 hour time constraint of the exercises the solution focuses on being meeting the exercise requirement rather that being production production ready. 
+
+With this being said here are the trade-offs made to stay withing the given time frame
+- No extra features outsite the requirements, exception being out of the box extra features provided by chose technologies
+- No e2e tests that start the api and run the cli to fully validate the integrations
+- No environment configuration
+- No CI/CD support
+- No focus on application performance
+- No build size optimisation
+- No authentication/authorisation
+- No customisation of development environemnt for productivity or catching errors faster
+
+# Original Test description
+
+<details>
+
+<summary>View technical test description</summary>
+
+<br>
+
+# Context
 As a senior product engineer in the team, you suggested to build an internal tool for our customer success team. You agreed with the product team on the following milestones.
 
 ## Step 1: Web API
@@ -83,3 +154,4 @@ In order to setup and run the existing basic project we provided:
 - install node (see .nvmrc)
 - install and run `pnpm install`
 - see the documentation in packages/api and packages/cli
+</details>
