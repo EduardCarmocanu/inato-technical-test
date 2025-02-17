@@ -1,8 +1,8 @@
 import { CountryModel } from "../models/country.model";
 
-const countriesList: CountryModel[] = require('../../countries.json')
-
 export const countryRepository = () => {
+    const countriesList: CountryModel[] = require('../../countries.json')
+
     const getCountriesList = (): CountryModel[] => {
         return countriesList
     }
