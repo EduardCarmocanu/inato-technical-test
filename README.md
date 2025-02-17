@@ -4,6 +4,22 @@ You will find in this README.md file a high level description of the solution an
 
 For more details on using the API and the CLI consult the README.md files found in their respective package folders
 
+# Quick start steps:
+
+Before diving into more details here are the quick start steps that should get you up and running
+
+- from the project root
+- run `nvm use` to make sure you are using the correct node version for this project. If you don't have nvm installed follow the [installation instructions](https://github.com/nvm-sh/nvm) on the package repository
+- run `pnpm install` to install packages
+- run `pnpm api start:dev` to start the API and wait for it to be available at localhost:3000
+- run `pnpm cli start --country=<FR,ES,IT,DE,AT>` to query ongoing trials for any of the countries avaialbe (example usage: `pnpm cli start --country=FR`)
+
+# Running tests
+- run `pnpm api test` to run API unit test
+- run `pnpm cli test` to run CLI unit tests
+- run `pnpm api test:integration` to run API unit test
+- run `pnpm cli test:integration` to run CLI unit tests
+
 # Overall architecure
 
 You fill find that the 2 main packages (api and cli) are both following the same application architecture overall where only the implementation details differ.
@@ -50,10 +66,10 @@ The default setup that used [commander](https://www.npmjs.com/package/commander)
 
 # Time constraints
 
-In order to remain withint the 5 hour time constraint of the exercises the solution focuses on being meeting the exercise requirement rather that being production production ready. 
+In order to remain withint the 5 hour time constraint of the exercises the solution focuses on meeting the exercise requirement rather that being production ready. 
 
 With this being said here are the trade-offs made to stay withing the given time frame
-- No extra features outsite the requirements, exception being out of the box extra features provided by chose technologies
+- No extra features outsite the requirements, exception out of the box extra features provided by the chosen technologies
 - No e2e tests that start the api and run the cli to fully validate the integrations
 - No environment configuration
 - No CI/CD support
