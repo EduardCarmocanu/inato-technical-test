@@ -21,7 +21,7 @@ Before diving into more details here are the quick start steps that should get y
 
 # Overall architecure
 
-The architecture choices for the solution use general purpose patterns that are good fit for most applications. This way of building application is pretty close to how we are buivding microservices at contentsquare and hotjar because it offers a repeatable structure that is not very complicated to decipher as application grow in size
+The architecture choices for the solution use general purpose patterns that are good fit for most applications. This way of building application is pretty close to how we are building microservices at contentsquare and hotjar because it offers a repeatable structure that is not very complicated to decipher as applications grow in size
 
 You will find that the 2 main packages (api and cli) are both following the same application architecture where only the implementation details differ.
 
@@ -32,21 +32,22 @@ Let's start with this representative diagram and you will find additional detail
 Bellow you can find explanations on what each part does.
 
 ### Modules
-> Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
+Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
 
 ### Controllers
-> Are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI is can be processing command (and arguments) inputs
+Controllers are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI is can be processing command (and arguments) inputs
 
 ### Services
-> Define business logic related to a domain. For example computing if a trials is ongoing or not in our case
+Services define business logic related to a domain. For example computing if a trials is ongoing in our case
 
 ### Repositories
-> Provide an abstraction layer for accessing data sources such as a database, api, or in our case, simply requiring a json file
+Repositories provide an abstraction layer for accessing data sources such as a database, api, or in our case, simply requiring a json file
 
 ### Models
-> Define the core concepts and relations existing in our applications
+Models define the core concepts and relations existing in our applications
 
-Moreover, you may have noticed the usage of other structures such as:
+### Other
+You may have noticed the usage of other structures such as:
 - Enums: for defining typed constants
 - Interfaces: for typing objects coming from external sources
 - Mappers: for mapping objects to defined types in our application
@@ -65,14 +66,14 @@ For the API the [Nest.JS](https://nestjs.com/) framework was chosen because it p
 - CLI with code autogeneration capabilities
 
 ### For the CLI
-The default setup that used [commander](https://www.npmjs.com/package/commander) was kept because it already provided an intuitive way to define and validate the CLI options to be provided. On top of that [jest](https://jestjs.io/fr/) was added to bring support for unit and integration testing.
+The default setup that used [commander](https://www.npmjs.com/package/commander) was kept because it already provided an intuitive way to define and validate the CLI options to be provided, However [jest](https://jestjs.io/fr/) was added to bring support for unit testing.
 
 # Time constraints
 
 In order to remain withint the 5 hour time constraint of the exercises the solution focuses on meeting the exercise requirement rather that being production ready. 
 
 With this being said here are the trade-offs made to stay withing the given time frame
-- No extra features outsite the requirements, exception out of the box extra features provided by the chosen technologies
+- No extra features outsite the requirements, only exceptions are out of the box extra features provided by the chosen technologies
 - No e2e tests that start the api and run the cli to fully validate the integrations
 - No running environment configuration
 - No integration tests for the CLI
