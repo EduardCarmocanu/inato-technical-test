@@ -2,17 +2,19 @@
 
 This CLI serves as a client to query the API in order to retrieve a list of clinical trials.
 
-## Usage
+## Getting started
 
-Before you start using the cli, you need to have the API up and running. 
+To get started follow the steps bellow
+- Run `nvm use` to use appropriate node version
+    - [how to install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) if needed
+- Run `pnpm install` to install dependencies
+- From project root run `pnpm api start:dev` to start the api
+    - If you haven't setup the api before doing this you should follow the `Getting started` section of the api package README.md file and come back here
+- At this point you should see the server running in watch mode and you can execute requests against it
+- From cli package root, run `pnpm start --country=FR`
+- At this point you should see a list of ongoing trials returned in your terminal
 
-If you haven't installed the api yet, follow the `Getting Started` instructions in the `api` package and come back here
-
-If you already installed the api, you can simply to go the root of the project and run `pnpm api start:dev`. This will start the api development server at `localhost:3000`
-
-Now that you have the API up an running you can start using the CLI.
-
-### Example usage:
+## Usage:
 
 To get a list of clinical trials for one of the available countries you can use `pnpm start --country=FR`
 

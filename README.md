@@ -11,37 +11,40 @@ Before diving into more details here are the quick start steps that should get y
 - from the project root
 - run `nvm use` to make sure you are using the correct node version for this project. If you don't have nvm installed follow the [installation instructions](https://github.com/nvm-sh/nvm) on the package repository
 - run `pnpm install` to install packages
-- run `pnpm api start:dev` to start the API and wait for it to be available at localhost:3000
-- run `pnpm cli start --country=<FR,ES,IT,DE,AT>` to query ongoing trials for any of the countries avaialbe (example usage: `pnpm cli start --country=FR`)
+- run `pnpm api start:dev` to start the API and wait for it to be available at `localhost:3000`
+- run `pnpm cli start --country=<FR,ES,IT,DE,AT>` to query ongoing trials for any of the countries available (example usage: `pnpm cli start --country=FR`)
 
 # Running tests
 - run `pnpm api test` to run API unit test
 - run `pnpm api test:integration` to run API integration test
 - run `pnpm cli test` to run CLI unit tests
 
-
 # Overall architecure
 
-You fill find that the 2 main packages (api and cli) are both following the same application architecture overall where only the implementation details differ.
+The architecture choices for the solution use general purpose patterns that are good fit for most applications. This way of building application is pretty close to how we are buivding microservices at contentsquare and hotjar because it offers a repeatable structure that is not very complicated to decipher as application grow in size
 
-Let's start with this representative diagram and you will find additional details bellow
+You will find that the 2 main packages (api and cli) are both following the same application architecture where only the implementation details differ.
+
+Let's start with this representative diagram and you will find additional details afterwards
 
 ![alt text](image.png)
 
-### Models
-> Define the core concepts and relations existing in our applications
+Bellow you can find explanations on what each part does.
+
+### Modules
+> Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
 
 ### Controllers
 > Are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI is can be processing command (and arguments) inputs
 
 ### Services
-> Define business logic related to a domain.
+> Define business logic related to a domain. For example computing if a trials is ongoing or not in our case
 
 ### Repositories
-> Provide an abstraction layer for accessing data sources such as a database, api, or in our case, json files
+> Provide an abstraction layer for accessing data sources such as a database, api, or in our case, simply requiring a json file
 
-### Modules
-> Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
+### Models
+> Define the core concepts and relations existing in our applications
 
 Moreover, you may have noticed the usage of other structures such as:
 - Enums: for defining typed constants

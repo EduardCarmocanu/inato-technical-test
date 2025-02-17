@@ -5,6 +5,8 @@ This API exposes ongoing clinical trials
 ## Getting started
 
 To get started follow the steps bellow
+- Run `nvm use` to use appropriate node version
+    - [how to install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) if needed
 - Run `pnpm install` to install dependencies
 - Run `pnpm start:dev` to start a local development server
 - At this point you should see the server running in watch mode and you can execute requests against it
