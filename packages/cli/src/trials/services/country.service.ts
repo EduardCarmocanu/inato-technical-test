@@ -1,8 +1,11 @@
 import { CountryModel } from "../models/country.model";
-
-const countriesList: CountryModel[] = require('../../assets/countries.json');
+import { countryRepository } from "../repositories/country.repository";
 
 export const countryService = () => {
+    const { getCountriesList } = countryRepository()
+
+    const countriesList: CountryModel[] = getCountriesList();
+
     const getCountryName = (code: string): string => {
         const country = countriesList.find(country => country.code === code)
 

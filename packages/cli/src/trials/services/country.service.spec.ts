@@ -1,7 +1,7 @@
 import { describe, expect, it, jest } from '@jest/globals';
 import { countryService } from './country.service';
 
-jest.mock('../../assets/countries.json', () => ([
+jest.mock('../../countries.json', () => ([
     {
         "name": "France",
         "code": "FR"
