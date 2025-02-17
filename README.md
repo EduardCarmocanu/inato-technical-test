@@ -35,10 +35,10 @@ Bellow you can find explanations on what each part does.
 Modules represent domains and they encompass the related object while dividing the application in larger significant areas focused on a certain problem. One example of such module is the trials module found under `/packages/api/src/trials`
 
 ### Controllers
-Controllers are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI is can be processing command (and arguments) inputs
+Controllers are responsible for processing input. For the API this can be processing requests made for certain endpoints and for the CLI this can be processing command (and arguments) inputs
 
 ### Services
-Services define business logic related to a domain. For example computing if a trials is ongoing in our case
+Services define business logic related to a domain. For example computing if a trial is ongoing in our case
 
 ### Repositories
 Repositories provide an abstraction layer for accessing data sources such as a database, api, or in our case, simply requiring a json file
@@ -68,11 +68,11 @@ For the API the [Nest.JS](https://nestjs.com/) framework was chosen because it p
 ### For the CLI
 The default setup that used [commander](https://www.npmjs.com/package/commander) was kept because it already provided an intuitive way to define and validate the CLI options to be provided, However [jest](https://jestjs.io/fr/) was added to bring support for unit testing.
 
-# Time constraints
+# Tradeoffs
 
 In order to remain withint the 5 hour time constraint of the exercises the solution focuses on meeting the exercise requirement rather that being production ready. 
 
-With this being said here are the trade-offs made to stay withing the given time frame
+With this being said here are the tradeoffs made to stay withing the given time frame
 - No extra features outsite the requirements, only exceptions are out of the box extra features provided by the chosen technologies
 - No e2e tests that start the api and run the cli to fully validate the integrations
 - No running environment configuration
