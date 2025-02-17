@@ -13,7 +13,7 @@ const testCountries: CountryModel[] = [
     },
 ]
 
-jest.doMock('../../countries.json', () => testCountries)
+jest.doMock('../../../countries.json', () => testCountries)
 
 
 describe('countryRepository', () => { 
