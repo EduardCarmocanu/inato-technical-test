@@ -16,9 +16,9 @@ Before diving into more details here are the quick start steps that should get y
 
 # Running tests
 - run `pnpm api test` to run API unit test
+- run `pnpm api test:integration` to run API integration test
 - run `pnpm cli test` to run CLI unit tests
-- run `pnpm api test:integration` to run API unit test
-- run `pnpm cli test:integration` to run CLI unit tests
+
 
 # Overall architecure
 
@@ -71,7 +71,8 @@ In order to remain withint the 5 hour time constraint of the exercises the solut
 With this being said here are the trade-offs made to stay withing the given time frame
 - No extra features outsite the requirements, exception out of the box extra features provided by the chosen technologies
 - No e2e tests that start the api and run the cli to fully validate the integrations
-- No environment configuration
+- No running environment configuration
+- No integration tests for the CLI
 - No CI/CD support
 - No focus on application performance
 - No build size optimisation
