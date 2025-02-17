@@ -1,11 +1,11 @@
 import { program } from "commander";
+import { trialsController } from "./trials/controllers/trials.controller";
+import { optionsController } from "./trials/controllers/options.controller";
 
 program
   .name("inato-cli")
   .command("trials")
   .description("get the list of clinical trials")
-  .action(async () => {
-    const response = await fetch("http://localhost:8080/ping");
-    console.log(await response.text());
-  })
+  .addOption(optionsController().getTrialsCountryOptions())
+  .action(trialsController().streamOngoingTrials)
   .parseAsync(process.argv);
